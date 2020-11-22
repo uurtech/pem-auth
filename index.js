@@ -17,7 +17,7 @@ module.exports = {
 
         var cert = fs.readFileSync(PUBLIC_PEM_FILE);  // get public key
         jwt.verify(token, cert, function(err, decoded) {
-            if(typeof decoded.data === "undefined"){
+            if(typeof decoded.store_id === "undefined"){
                 res.status(500).send({'message' : 'can not decode data, ERR_NO:101'})
             }
             req.decoded = decoded;
