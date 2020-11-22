@@ -1,0 +1,22 @@
+{
+  "name": "pem-auth",
+  "version": "1.0.1",
+  "description": "Use Pem Pub key to decrypt request in express",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/uurtech/pem-auth"
+  },
+  "author": "girisiyorum@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Omega-Dijital/pem-auth/issues"
+  },
+  "homepage": "https://github.com/Omega-Dijital/pem-auth#readme",
+  "dependencies": {
+    "crypto": "^1.0.1"
+  }
+}
