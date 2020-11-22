@@ -19,7 +19,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -30,7 +30,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1606031929115</updated>
-      <workItem from="1606031930256" duration="5385000" />
+      <workItem from="1606031930256" duration="6315000" />
     </task>
     <servers />
   </component>
@@ -42,5 +42,9 @@
       <screen x="1440" y="0" width="1920" height="1080" />
     </state>
     <state x="2134" y="337" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1440.900/1440.0.1920.1080@1440.0.1920.1080" timestamp="1606032192621" />
+    <state x="469" y="176" key="SettingsEditor" timestamp="1606038592866">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="469" y="176" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1606038592866" />
   </component>
 </project>

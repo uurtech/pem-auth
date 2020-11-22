@@ -1,32 +1,27 @@
-const crypto = require("crypto")
-const path = require("path");
+var jwt = require('jsonwebtoken');
 const fs = require("fs");
 
-//var PUBLIC_KEY_PATH = fs.readFileSync(path.join(__dirname, 'certs/vodafone.pub'), 'utf8');
-const PUBLIC_KEY_PATH = process.env.PUBLIC_KEY_PATH
+const PUBLIC_PEM_FILE = process.env.PUBLIC_PEM_FILE
 
-if(typeof PUBLIC_KEY_PATH === "undefined"){
-    console.log("Please provide valid public key path")
+if(typeof PUBLIC_PEM_FILE === "undefined"){
+    console.log("please provide valid pem file")
     return;
 }
-
 
 module.exports = {
     decrypt: (req, res, next) => {
 
-        let buff = req.body
-        try{
-            let decrypted = crypto.publicDecrypt(PUBLIC_KEY_PATH, buff);
-            decryptedObj = JSON.parse(decrypted.toString())
-            if (typeof decryptedObj['data'] === "undefined") {
-                res.status(500).send({'message': 'Can not decrypt data, please provide verified private key, if you sure you have correct key, please get in toch with Omega Dijital'});
-                return
-            }
-            req.decryptedObj = decryptedObj;
-            next();
-        }catch(exception){
-            res.status(500).send({'message' : exception});
-        }
+        const authHeader = req.headers['authorization']
+        const token = authHeader && authHeader.split(' ')[1]
+        if (token == null) return res.sendStatus(401) // if there isn't any token
 
+        var cert = fs.readFileSync(PUBLIC_PEM_FILE);  // get public key
+        jwt.verify(token, cert, function(err, decoded) {
+            if(typeof decoded.data === "undefined"){
+                res.status(500).send({'message' : 'can not decode data, ERR_NO:101'})
+            }
+            req.decoded = decoded;
+            next();
+        });
     }
 }

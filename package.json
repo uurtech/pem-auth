@@ -1,6 +1,6 @@
 {
   "name": "pem-auth",
-  "version": "1.0.8",
+  "version": "1.1.1",
   "description": "Use Pem Pub key to decrypt request in express",
   "main": "index.js",
   "scripts": {
@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/uurtech/pem-auth",
   "dependencies": {
-    "crypto": "^1.0.1"
+    "jsonwebtoken": "^8.5.1"
   }
 }
